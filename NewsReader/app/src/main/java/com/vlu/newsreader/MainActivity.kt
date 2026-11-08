@@ -6,12 +6,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.vlu.newsreader.network.ApiConfig
 import com.vlu.newsreader.network.HttpClient
+import com.vlu.newsreader.parser.NewsJsonParser
 import java.io.IOException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import org.json.JSONException
 
-// Temporary activity to check Step 3 (HTTP GET) in Logcat, Step 5 replaces it
+// Temporary activity to check Step 4 (manual vs Gson parsing) in Logcat, Step 5 replaces it
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,10 +25,14 @@ class MainActivity : AppCompatActivity() {
                 val result = withContext(Dispatchers.IO) {
                     HttpClient().get(ApiConfig.NEWS_URL)
                 }
-                Log.d("NewsReader", "status=${result.statusCode} length=${result.body.length}")
-                Log.d("NewsReader", result.body.take(200))
+                val manual = NewsJsonParser.parseManual(result.body)
+                val automated = NewsJsonParser.parseWithGson(result.body)
+                Log.d("NewsReader", "manual=${manual.size} gson=${automated.size} equal=${manual == automated}")
+                Log.d("NewsReader", manual.first().toString())
             } catch (e: IOException) {
                 Log.e("NewsReader", "Request failed", e)
+            } catch (e: JSONException) {
+                Log.e("NewsReader", "Parsing failed", e)
             }
         }
     }

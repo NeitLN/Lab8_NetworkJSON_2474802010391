@@ -1,0 +1,5 @@
+11-08 17:50:14.845 D/NewsReader(23579): manual=100 gson=100 equal=true
+11-08 17:50:14.847 D/NewsReader(23579): NewsItem(id=1, userId=1, title=sunt aut facere repellat provident occaecati excepturi optio reprehenderit, body=quia et suscipit
+11-08 17:50:14.847 D/NewsReader(23579): suscipit recusandae consequuntur expedita et cum
+11-08 17:50:14.847 D/NewsReader(23579): reprehenderit molestiae ut ut quas totam
+11-08 17:50:14.847 D/NewsReader(23579): nostrum rerum est autem sunt rem eveniet architecto)
