@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">NewsReader</string>
+    <string name="reload">Reload</string>
+    <string name="send_test_post">Send test POST</string>
+    <string name="empty_list">No news items</string>
+    <string name="item_meta">Post #%1$d · User %2$d</string>
+    <string name="error_network">Network error: %1$s</string>
+    <string name="error_http">Server returned HTTP %1$d</string>
+    <string name="error_parse">Data format error: %1$s</string>
+    <string name="post_result">POST status: %1$d</string>
 </resources>
