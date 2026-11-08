@@ -1,0 +1,6 @@
+11-08 17:53:43.538 D/NewsReader(23734): POST status=201 body={
+11-08 17:53:43.538 D/NewsReader(23734):   "title": "Lab 8 test post",
+11-08 17:53:43.538 D/NewsReader(23734):   "body": "Created from NewsReader",
+11-08 17:53:43.538 D/NewsReader(23734):   "userId": 1,
+11-08 17:53:43.538 D/NewsReader(23734):   "id": 101
+11-08 17:53:43.538 D/NewsReader(23734): }
